@@ -2,33 +2,33 @@
 
 /* ============================================================================
    Design tokens — "Live Music & Celebrations · Smart Guest Platform" concept prototype
-   Palette: midnight navy · warm ivory · champagne gold · muted sage · warm grey
+   Palette: white · parchment · near-black · Action Blue (uploaded apple_design.md)
    ==========================================================================*/
 @theme {
   /* Ink — midnight navy & charcoal (navigation, headers, staff chrome) */
-  --color-ink-950: #060d15;
-  --color-ink-900: #0b1622;
-  --color-ink-850: #0e1c2b;
-  --color-ink-800: #122337;
-  --color-ink-700: #173049;
-  --color-ink-600: #22405c;
-  --color-ink-500: #33556f;
+  --color-ink-950: #000000;
+  --color-ink-900: #1d1d1f;
+  --color-ink-850: #272729;
+  --color-ink-800: #2a2a2c;
+  --color-ink-700: #333333;
+  --color-ink-600: #515154;
+  --color-ink-500: #6e6e73;
 
   /* Ivory & cream — guest-facing surfaces */
-  --color-ivory-50: #fcfaf6;
-  --color-ivory-100: #f8f4ec;
-  --color-cream-200: #f1ebe1;
-  --color-cream-300: #e7ded0;
-  --color-sand-400: #d9cdb8;
+  --color-ivory-50: #ffffff;
+  --color-ivory-100: #f5f5f7;
+  --color-cream-200: #f0f0f0;
+  --color-cream-300: #e0e0e0;
+  --color-sand-400: #d2d2d7;
 
   /* Champagne gold & brushed brass — restrained accents */
-  --color-gold-200: #efe3c8;
-  --color-gold-300: #e0cda6;
-  --color-gold-400: #d0b584;
-  --color-gold-500: #c2a266;
-  --color-gold-600: #7a5f30;
-  --color-gold-700: #876a37;
-  --color-gold-800: #6f5529; /* gold text on pale gold tints */
+  --color-gold-200: #edf5ff;
+  --color-gold-300: #b8dbff;
+  --color-gold-400: #2997ff;
+  --color-gold-500: #0066cc;
+  --color-gold-600: #0066cc;
+  --color-gold-700: #005bb5;
+  --color-gold-800: #004f9e; /* gold text on pale gold tints */
 
   /* Sage & forest — successful states */
   --color-sage-300: #a9bfae;
@@ -38,14 +38,14 @@
   --color-forest-700: #39553f;
 
   /* Warm grey — secondary text & surfaces */
-  --color-warm-50: #f5f2ed;
-  --color-warm-100: #ebe6de;
-  --color-warm-200: #ded8ce;
-  --color-warm-300: #c6beb2;
-  --color-warm-400: #a79e92;
-  --color-warm-500: #68615a;
-  --color-warm-600: #635d55;
-  --color-warm-700: #544f49;
+  --color-warm-50: #fafafc;
+  --color-warm-100: #f5f5f7;
+  --color-warm-200: #e8e8ed;
+  --color-warm-300: #d2d2d7;
+  --color-warm-400: #a1a1a6;
+  --color-warm-500: #6e6e73;
+  --color-warm-600: #515154;
+  --color-warm-700: #333333;
 
   /* Restrained semantic accents (no neon, no rainbow) */
   --color-brass-500: #c08a3e; /* awaiting action */
@@ -54,14 +54,18 @@
   --color-clay-600: #8d5438;
 
   /* Typography */
-  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI",
+    sans-serif;
+  --font-display:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, "Segoe UI",
+    sans-serif;
 
   /* Elevation — deliberately soft and low-contrast */
-  --shadow-hairline: 0 1px 2px rgb(11 22 34 / 0.04);
-  --shadow-lift: 0 1px 2px rgb(11 22 34 / 0.05), 0 10px 24px -14px rgb(11 22 34 / 0.18);
-  --shadow-panel: 0 1px 3px rgb(11 22 34 / 0.05), 0 26px 60px -34px rgb(11 22 34 / 0.3);
-  --shadow-pop: 0 2px 6px rgb(11 22 34 / 0.08), 0 20px 46px -22px rgb(11 22 34 / 0.32);
+  --shadow-hairline: none;
+  --shadow-lift: none;
+  --shadow-panel: none;
+  --shadow-pop: none;
 
   /* Motion */
   --animate-fade-up: fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -228,8 +232,8 @@
 
   .display {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    letter-spacing: -0.025em;
     line-height: 1.06;
   }
 
@@ -281,21 +285,12 @@
   /* Gold hairline used as a premium separator under headings */
   .gold-hairline {
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      var(--color-gold-500),
-      color-mix(in srgb, var(--color-gold-500) 25%, transparent)
-    );
+    background: var(--color-cream-300);
   }
 
   /* Photo scrim so overlaid type stays legible on any image */
   .photo-scrim {
-    background: linear-gradient(
-      180deg,
-      rgb(6 13 21 / 0.15) 0%,
-      rgb(6 13 21 / 0.42) 55%,
-      rgb(6 13 21 / 0.78) 100%
-    );
+    background: rgb(0 0 0 / 45%);
   }
 
   /*
@@ -312,9 +307,9 @@
   .bg-ink-850,
   .bg-ink-800,
   .surface-ink {
-    --color-warm-500: #a79e92;
-    --color-warm-600: #a79e92;
-    --color-gold-600: #d0b584;
+    --color-warm-500: #a1a1a6;
+    --color-warm-600: #cccccc;
+    --color-gold-600: #2997ff;
   }
 }
 
@@ -331,3 +326,5 @@
     scroll-behavior: auto !important;
   }
 }
+
+@import "./music.css";

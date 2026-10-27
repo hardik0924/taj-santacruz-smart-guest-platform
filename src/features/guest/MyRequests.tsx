@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { SongRequestRow } from './SongRequestRow';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ClipboardList, Compass } from 'lucide-react';
 import { useRequests } from '@/store/RequestsProvider';
@@ -22,7 +23,7 @@ type Filter = 'active' | 'completed' | 'all';
  */
 export function MyRequests() {
   const { requests, enquiries, session, tick } = useRequests();
-  const [filter, setFilter] = useState<Filter>('active');
+  const [filter, setFilter] = useState<Filter>('all');
 
   const mine = useMemo(
     () =>
@@ -57,7 +58,7 @@ export function MyRequests() {
     <ServiceShell
       eyebrow="Your session"
       title="My requests"
-      description="Everything you have asked for during this stay — song requests and celebration enquiries — with live status recorded by each team. Rows open a full timeline; no refresh needed."
+      description="See whether your song is waiting, accepted, or declined. Queue and playback updates appear here automatically."
       actions={
         <Link
           to="/guest"
@@ -89,8 +90,8 @@ export function MyRequests() {
 
       <div className="mt-8">
         <SectionHeading
-          eyebrow="Timeline"
-          title="Request history"
+          eyebrow="Your requests"
+          title="Songs and requests"
           action={
             <SegmentedControl<Filter>
               ariaLabel="Filter requests"
@@ -194,9 +195,10 @@ export function MyRequests() {
 
 function RequestRow({ request }: { request: ServiceRequest }) {
   const homePath = useHomePath();
+  if (request.service === "music") return <SongRequestRow request={request}/>;
   return (
     <Link
-      to={`${homePath}/my-requests/${request.ref}`}
+      to={`${homePath}/requests/${request.ref}`}
       className="group flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 transition-colors hover:bg-warm-50 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-gold-600 sm:px-5"
     >
       <span className="tnum w-[84px] shrink-0 text-[12.5px] font-semibold tracking-[0.05em] text-warm-500">

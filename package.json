@@ -3,15 +3,17 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Concept prototype — Live Music Requests & Celebration Enquiries for hotel guests (table QR entry, performer console, events desk). Independent demonstration, not an official hotel product.",
+  "description": "Concept prototype \u2014 Live Music Requests & Celebration Enquiries for hotel guests (table QR entry, performer console, events desk). Independent demonstration, not an official hotel product.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit",
+    "test:program": "node --test tests/musicProgram.test.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.61.0",
+    "qrcode.react": "^4.2.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-router-dom": "^7.18.4"

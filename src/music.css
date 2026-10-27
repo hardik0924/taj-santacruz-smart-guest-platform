@@ -1,0 +1,2180 @@
+/* Live music visual language: Apple reference surfaces, system typography, and Action Blue. */
+.music-page,
+.music-console {
+  --music-lime: var(
+    --apple-accent
+  ); /* legacy name retained for existing components */
+  --music-ink: var(--apple-ink);
+  --music-muted: var(--apple-muted);
+  color: var(--music-ink);
+  font-size: 17px;
+  line-height: 1.47;
+}
+.music-page {
+  max-width: 1240px;
+  margin: auto;
+  padding: 42px 32px 70px;
+}
+.music-console {
+  padding: 32px 28px 125px;
+  max-width: 1180px;
+  margin: auto;
+}
+.music-page h1,
+.music-console h1 {
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin: 9px 0 14px;
+}
+.music-page h2,
+.music-console h2 {
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+.music-page h3,
+.music-console h3 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.music-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.music-page-heading > div > p:last-child {
+  color: var(--music-muted);
+}
+.music-kicker {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+.music-muted {
+  color: var(--music-muted);
+  font-size: 13px;
+}
+.music-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  padding: 7px 11px;
+  border-radius: 100px;
+  background: var(--apple-divider);
+  font-size: 11px;
+  font-weight: 600;
+}
+.music-dot,
+.music-live i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--music-lime);
+  border-radius: 100%;
+}
+.music-dot.is-paused {
+  background: var(--apple-accent);
+}
+.music-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--music-lime);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.music-guest-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 32px;
+}
+.music-guest-main,
+.music-guest-aside {
+  min-width: 0;
+}
+.music-hero {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--music-ink);
+  color: var(--apple-on-dark);
+  min-height: 270px;
+}
+.music-hero-copy {
+  padding: 27px;
+  position: relative;
+  z-index: 1;
+  width: 68%;
+  background: rgb(0 0 0 / 45%);
+}
+.music-hero h2 {
+  font-size: 36px;
+  margin: 24px 0 5px;
+}
+.music-hero p {
+  color: var(--apple-dark-muted);
+  font-size: 14px;
+}
+.music-hero > img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+}
+.music-hero-footer {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 30px;
+  color: var(--music-lime);
+}
+.music-hero-footer span {
+  font-size: 11px;
+  color: var(--apple-on-dark);
+}
+.music-hero-footer small {
+  display: block;
+  font-size: 10px;
+  color: var(--apple-dark-muted);
+}
+.music-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 28px 0 10px;
+}
+.music-section-heading .music-kicker {
+  margin-bottom: 6px;
+  color: var(--apple-accent);
+}
+.music-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 18px;
+  background: var(--apple-on-dark);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 16px;
+  margin: 20px 0 12px;
+}
+.music-search input {
+  outline: none;
+  background: transparent;
+  width: 100%;
+  min-width: 0;
+}
+.music-search:focus-within {
+  outline: 2px solid var(--apple-accent);
+  outline-offset: 2px;
+}
+.music-filters {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 4px 4px 16px;
+  margin-inline: -4px;
+}
+.music-filters button {
+  flex-shrink: 0;
+  border: 1px solid var(--apple-hairline);
+  padding: 10px 14px;
+  min-height: 44px;
+  border-radius: 100px;
+  font-size: 12px;
+  color: var(--apple-body);
+  cursor: pointer;
+}
+.music-filters button[aria-pressed="true"] {
+  background: var(--apple-ink);
+  color: var(--apple-on-dark);
+  border-color: var(--apple-ink);
+}
+.music-song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--apple-on-dark);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.music-song-list li {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--apple-divider);
+}
+.music-song-list li:last-child {
+  border-bottom: 0;
+}
+.music-record {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  color: var(--apple-on-dark);
+  background: var(--apple-dark-surface);
+}
+.record-1 {
+  background: var(--apple-parchment);
+  color: var(--apple-caption);
+}
+.record-2 {
+  background: var(--apple-parchment);
+  color: var(--apple-caption);
+}
+.record-3 {
+  background: var(--apple-parchment);
+  color: var(--apple-caption);
+}
+.music-song-info {
+  min-width: 0;
+  flex: 1;
+}
+.music-song-info strong,
+.music-my-row strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.music-song-info small,
+.music-my-row small {
+  display: block;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  color: var(--music-muted);
+  margin-top: 3px;
+}
+.music-duration {
+  color: var(--apple-muted);
+  font-size: 11px;
+}
+.music-add {
+  display: grid;
+  place-items: center;
+  background: var(--apple-parchment);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.music-add:hover {
+  background: var(--music-lime);
+}
+.music-add:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.music-primary,
+.music-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 100px;
+  min-height: 44px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
+}
+.music-primary {
+  background: var(--apple-accent);
+  color: var(--apple-on-dark);
+}
+.music-primary:hover {
+  background: var(--apple-focus);
+}
+.music-secondary {
+  background: transparent;
+  border: 1px solid var(--apple-hairline);
+  color: var(--apple-body);
+}
+.music-primary:disabled {
+  background: var(--apple-hairline);
+  color: var(--apple-caption);
+  cursor: not-allowed;
+}
+.music-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 19px;
+}
+.music-actions > .music-primary,
+.music-actions > .music-secondary {
+  flex: 1;
+}
+.music-text-button {
+  font-size: 13px;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 8px;
+  color: var(--apple-accent);
+  cursor: pointer;
+}
+.music-actions > .music-text-button {
+  width: 100%;
+}
+.music-request-form {
+  background: var(--apple-parchment);
+  padding: 24px;
+  border-radius: 18px;
+  margin-top: 18px;
+  border: 1px solid var(--apple-hairline);
+}
+.music-request-form h3 {
+  margin-top: 7px;
+  overflow-wrap: anywhere;
+  scroll-margin-top: 130px;
+}
+.music-request-form label {
+  display: block;
+  margin: 20px 0 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.music-request-form textarea {
+  display: block;
+  background: var(--apple-on-dark);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 14px;
+  width: 100%;
+  padding: 14px;
+  min-height: 95px;
+  resize: vertical;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.music-request-form > small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+}
+.music-request-form > .music-actions > .music-primary {
+  flex: 2;
+}
+.music-notice {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 14px;
+  padding: 13px 16px;
+  background: var(--apple-parchment);
+  font-size: 12px;
+  margin: 15px 0;
+}
+.music-audience,
+.music-history {
+  padding: 24px;
+  background: var(--apple-on-dark);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 18px;
+}
+.music-audience .music-section-heading,
+.music-history .music-section-heading {
+  margin-top: 0;
+}
+.music-audience .music-live {
+  color: var(--apple-accent);
+}
+.music-audience .music-live i {
+  background: var(--apple-accent);
+}
+.music-vote-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+.music-vote-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--apple-divider);
+}
+.music-rank {
+  font-size: 12px;
+  color: var(--apple-muted);
+  font-weight: 600;
+}
+.music-vote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 56px;
+  min-height: 42px;
+  background: var(--apple-parchment);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 13px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.music-vote[aria-pressed="true"] {
+  background: var(--music-lime);
+  border-color: var(--music-lime);
+}
+.music-vote:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.music-fineprint {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--apple-muted);
+  margin-top: 16px;
+}
+.music-fineprint > svg {
+  flex-shrink: 0;
+}
+.music-evening {
+  border-radius: 18px;
+  background: var(--music-lime);
+  padding: 28px;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+.music-evening h2 {
+  font-size: 32px;
+  margin: 18px 0;
+}
+.music-evening p:not(.music-kicker) {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.music-evening > svg {
+  position: absolute;
+  bottom: 27px;
+  right: 25px;
+  opacity: 0.4;
+}
+.music-history-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--apple-divider);
+  font-size: 13px;
+}
+.music-history-row small {
+  display: block;
+  font-size: 11px;
+  color: var(--apple-muted);
+}
+.music-my-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--apple-on-dark);
+  border-bottom: 1px solid var(--apple-divider);
+  padding: 15px;
+  border-radius: 14px;
+  margin: 6px 0;
+}
+.music-my-row > div {
+  flex: 1;
+  min-width: 0;
+}
+.music-empty {
+  text-align: center;
+  color: var(--apple-muted);
+  padding: 35px 15px;
+  font-size: 13px;
+}
+.music-empty > svg {
+  margin: 0 auto 15px;
+}
+/* Performer: a light operational canvas with a black summary and floating dock. */
+.music-console-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  background: var(--music-ink);
+  border-radius: 18px;
+  padding: 30px;
+  color: var(--apple-on-dark);
+}
+.music-console-summary .music-kicker {
+  color: var(--music-lime);
+}
+.music-console-summary h2 {
+  font-size: 32px;
+  margin: 15px 0;
+}
+.music-console-summary p:last-child {
+  color: var(--apple-dark-muted);
+  font-size: 12px;
+}
+.music-summary-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 18px;
+}
+.music-summary-stats > div {
+  border-left: 1px solid var(--apple-dark-surface);
+  padding-left: 20px;
+}
+.music-summary-stats strong {
+  display: block;
+  font-size: 38px;
+  color: var(--music-lime);
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+.music-summary-stats small {
+  display: block;
+  color: var(--apple-dark-muted);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  margin-top: 8px;
+}
+.music-tabs {
+  display: flex;
+  padding: 5px;
+  background: var(--apple-parchment);
+  border-radius: 18px;
+  margin: 25px 0;
+}
+.music-tabs button {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 16px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--apple-muted);
+  border-radius: 14px;
+  cursor: pointer;
+}
+.music-tabs strong {
+  font-size: 12px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+}
+.music-tabs button[aria-selected="true"] {
+  background: var(--apple-ink);
+  color: var(--music-lime);
+}
+.music-request-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.music-request-card {
+  padding: 23px;
+  background: var(--apple-on-dark);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 18px;
+}
+.music-request-card.is-approved {
+  background: var(--apple-parchment);
+}
+.music-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.music-card-top .music-kicker {
+  color: var(--apple-muted);
+}
+.music-request-card h3 {
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+.music-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+  color: var(--apple-muted);
+  margin-top: 24px;
+}
+.music-dedication {
+  font-size: 12px;
+  background: var(--apple-parchment);
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 15px;
+  overflow-wrap: anywhere;
+}
+.music-onstage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--apple-parchment);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 18px;
+  padding: 25px;
+  margin-top: 20px;
+}
+.music-onstage .music-live {
+  color: var(--apple-accent);
+}
+.music-onstage h2 {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+.music-onstage > div {
+  min-width: 0;
+}
+.music-onstage > button {
+  flex-shrink: 0;
+}
+.music-onstage p {
+  font-size: 12px;
+  color: var(--apple-muted);
+}
+.music-console-dock {
+  position: fixed;
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  background: var(--apple-ink);
+  border: 1px solid var(--apple-dark-surface);
+  border-radius: 100px;
+  padding: 7px;
+  z-index: 45;
+  box-shadow: none;
+  max-width: calc(100vw - 24px);
+}
+.music-console-dock button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 22px;
+  border-radius: 100px;
+  color: var(--apple-dark-muted);
+  font-size: 11px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.music-console-dock button[aria-current="page"] {
+  background: var(--music-lime);
+  color: var(--apple-ink);
+}
+.music-settings {
+  background: var(--apple-on-dark);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 18px;
+  padding: 28px;
+  margin-top: 25px;
+  max-width: 720px;
+}
+.music-settings h2 {
+  margin: 8px 0 20px;
+}
+.music-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  border-top: 1px solid var(--apple-divider);
+}
+.music-setting-row strong,
+.music-setting-row small {
+  display: block;
+}
+.music-setting-row small {
+  font-size: 12px;
+  color: var(--apple-muted);
+  margin-top: 5px;
+}
+.music-setting-row select {
+  border: 1px solid var(--apple-hairline);
+  border-radius: 12px;
+  padding: 9px 15px;
+}
+.music-switch {
+  width: 52px;
+  height: 44px;
+  border-radius: 100px;
+  background-color: var(--apple-hairline);
+  padding: 10px 3px;
+  background-clip: content-box;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.music-switch span {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--apple-on-dark);
+  transition: transform 0.15s;
+}
+.music-switch[aria-checked="true"] {
+  background-color: var(--apple-accent);
+}
+.music-switch[aria-checked="true"] span {
+  transform: translateX(22px);
+}
+.music-qr {
+  background: var(--apple-ink);
+  color: var(--apple-on-dark);
+  border-radius: 18px;
+  padding: 35px;
+  text-align: center;
+  max-width: 650px;
+  margin: 25px auto;
+}
+.music-qr h2 {
+  margin: 15px 0 22px;
+}
+.music-qr-image {
+  background: var(--apple-on-dark);
+  padding: 16px;
+  border-radius: 23px;
+  display: inline-flex;
+}
+.music-qr > p {
+  font-size: 12px;
+  color: var(--apple-dark-muted);
+  margin: 20px 0;
+}
+.music-qr > .music-primary,
+.music-qr > .music-secondary {
+  margin: 5px;
+}
+.music-qr > .music-secondary {
+  color: var(--apple-on-dark);
+  border-color: var(--apple-dark-muted);
+}
+.music-console .music-qr > .music-secondary:hover {
+  background: var(--apple-dark-surface);
+}
+.music-qr .music-fineprint {
+  justify-content: center;
+}
+.music-page button:focus-visible,
+.music-console button:focus-visible,
+.music-page textarea:focus-visible,
+.music-page [role="tabpanel"]:focus-visible,
+.music-console [role="tabpanel"]:focus-visible,
+.music-console summary:focus-visible,
+.music-console a:focus-visible,
+.music-request-form h3:focus-visible,
+.music-setting-row select:focus-visible {
+  outline: 2px solid var(--apple-focus);
+  outline-offset: 3px;
+}
+@media (max-width: 1023px) {
+  .music-console-dock {
+    left: 50%;
+  }
+}
+@media (max-width: 800px) {
+  .music-guest-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .music-page {
+    padding: 25px 18px 50px;
+  }
+  .music-console {
+    padding: 25px 18px 110px;
+  }
+  .music-page-heading {
+    align-items: flex-start;
+  }
+  .music-console-summary {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .music-summary-stats {
+    border-top: 1px solid var(--apple-dark-surface);
+    padding-top: 22px;
+    justify-content: space-between;
+  }
+  .music-summary-stats > div:first-child {
+    border: 0;
+    padding-left: 0;
+  }
+  .music-summary-stats strong {
+    font-size: 30px;
+  }
+  .music-request-grid {
+    grid-template-columns: 1fr;
+  }
+  .music-console-summary h2 {
+    font-size: 30px;
+  }
+  .music-console-dock button {
+    flex-direction: column;
+    gap: 3px;
+    padding: 8px 18px;
+    min-width: 65px;
+  }
+  .music-console-dock {
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+  .music-onstage {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .music-onstage > .music-primary {
+    width: 100%;
+  }
+  .music-console > .music-page-heading {
+    flex-wrap: wrap;
+  }
+  .music-page-heading .music-kicker {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .music-switch span {
+    transition: none;
+  }
+}
+
+/* One centered guest workflow on both desktop and mobile. Existing visual tokens stay intact. */
+.music-centered {
+  max-width: 790px;
+}
+.music-centered .music-page-heading {
+  margin-bottom: 22px;
+}
+.music-centered .music-page-heading h1 {
+  font-size: clamp(23px, 3.5vw, 32px);
+}
+.music-centered .music-guest-grid {
+  display: block;
+}
+.music-centered .music-hero {
+  min-height: 200px;
+}
+.music-centered .music-hero-copy {
+  padding: 24px;
+}
+.music-centered .music-hero h2 {
+  font-size: 30px;
+  margin-top: 15px;
+}
+.music-centered .music-hero-footer {
+  margin-top: 20px;
+}
+.music-workflow-nav {
+  display: flex;
+  gap: 5px;
+  background: var(--apple-parchment);
+  border-radius: 100px;
+  padding: 5px;
+  margin: 20px 0;
+}
+.music-workflow-nav button {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.music-workflow-nav button[aria-selected="true"] {
+  background: var(--apple-ink);
+  color: var(--apple-accent);
+}
+.music-workflow-nav span {
+  font-size: 11px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  min-width: 1.5ch;
+}
+.music-centered .music-request-form {
+  margin: 0 0 18px;
+}
+.music-centered .music-history {
+  margin-top: 20px;
+}
+@media (max-width: 540px) {
+  .music-centered .music-page-heading {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .music-centered .music-hero {
+    min-height: 185px;
+  }
+  .music-workflow-nav button {
+    font-size: 11px;
+    padding: 8px;
+    gap: 4px;
+  }
+}
+
+/* Visual tokens from the supplied apple_design.md. Layout rules above are unchanged. */
+:root {
+  --apple-accent: #0066cc;
+  --apple-focus: #0071e3;
+  --apple-on-dark-link: #2997ff;
+  --apple-ink: #1d1d1f;
+  --apple-body: #333333;
+  --apple-muted: #6e6e73;
+  --apple-caption: #515154;
+  --apple-dark-muted: #cccccc;
+  --apple-hairline: #e0e0e0;
+  --apple-divider: #f0f0f0;
+  --apple-parchment: #f5f5f7;
+  --apple-on-dark: #ffffff;
+  --apple-dark-surface: #272729;
+}
+.music-page h1,
+.music-console h1,
+.music-page h2,
+.music-console h2,
+.music-page h3,
+.music-console h3 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.music-search {
+  border-radius: 9999px;
+  background: var(--apple-parchment);
+  border-color: var(--apple-hairline);
+}
+.music-search input {
+  font-size: 17px;
+  letter-spacing: -0.022em;
+}
+.music-request-form,
+.music-request-card.is-approved,
+.music-onstage {
+  background: var(--apple-parchment);
+  border-color: var(--apple-hairline);
+}
+.music-add {
+  background: var(--apple-parchment);
+  color: var(--apple-accent);
+}
+.music-add:hover {
+  background: var(--apple-divider);
+}
+.music-filters button[aria-pressed="true"] {
+  background: var(--apple-on-dark);
+  color: var(--apple-accent);
+  border-color: var(--apple-focus);
+  box-shadow: inset 0 0 0 1px var(--apple-focus);
+}
+.music-workflow-nav button[aria-selected="true"],
+.music-tabs button[aria-selected="true"] {
+  background: var(--apple-on-dark);
+  color: var(--apple-accent);
+  box-shadow: none;
+}
+.music-vote[aria-pressed="true"] {
+  background: var(--apple-accent);
+  color: var(--apple-on-dark);
+  border-color: var(--apple-accent);
+}
+.music-console-dock {
+  background: rgb(245 245 247 / 90%);
+  border-color: var(--apple-hairline);
+  backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: none;
+}
+.music-console-dock button {
+  color: var(--apple-body);
+}
+.music-console-dock button[aria-current="page"] {
+  background: var(--apple-accent);
+  color: var(--apple-on-dark);
+}
+.music-live,
+.music-hero-footer,
+.music-console-summary .music-kicker {
+  color: var(--apple-on-dark-link);
+}
+.music-summary-stats strong {
+  color: var(--apple-on-dark);
+}
+.music-live i,
+.music-dot {
+  background: var(--apple-on-dark-link);
+}
+.music-audience .music-live,
+.music-onstage .music-live {
+  color: var(--apple-accent);
+}
+.music-evening {
+  background: var(--apple-parchment);
+}
+.music-record,
+.record-1,
+.record-2,
+.record-3 {
+  background: var(--apple-parchment);
+  color: var(--apple-caption);
+  border-radius: 8px;
+}
+.music-text-button,
+.music-section-heading .music-kicker {
+  color: var(--apple-accent);
+}
+.music-page button:active:not(:disabled),
+.music-console button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+.music-page button:focus-visible,
+.music-console button:focus-visible,
+.music-page textarea:focus-visible,
+.music-search:focus-within,
+.music-setting-row select:focus-visible {
+  outline-color: var(--apple-focus);
+}
+/* Existing shared gold-named utilities now use Action Blue, with white action labels. */
+button[class*="bg-gold-500"],
+a[class*="bg-gold-500"] {
+  color: var(--apple-on-dark);
+}
+@media (prefers-reduced-motion: reduce) {
+  .music-page button:active:not(:disabled),
+  .music-console button:active:not(:disabled) {
+    transform: none;
+  }
+}
+
+[class~="rounded-[24px]"] {
+  border-radius: 18px;
+}
+
+/* Payment-style submission receipt: centered, quiet, and focused on the requested song. */
+.song-confirmation {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(420px, calc(100vw - 40px));
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  padding: 48px 32px 28px;
+  border: 1px solid rgb(255 255 255 / 72%);
+  border-radius: 24px;
+  background: rgb(245 245 247 / 80%);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  color: var(--apple-ink);
+  text-align: center;
+  font-family: var(--font-sans);
+  animation: receipt-appear 0.24s ease-out both;
+}
+.song-confirmation::backdrop {
+  background: rgb(0 0 0 / 24%);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+.song-confirmation-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--apple-caption);
+  background: rgb(255 255 255 / 50%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.song-confirmation-icon {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--apple-accent);
+  border-radius: 50%;
+  color: var(--apple-accent);
+  margin: 0 auto 28px;
+}
+.song-confirmation-eyebrow {
+  color: var(--apple-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.music-page .song-confirmation h2 {
+  font-size: clamp(26px, 5vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+.song-confirmation-track {
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 1px solid var(--apple-divider);
+}
+.music-page .song-confirmation h3 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.song-confirmation-track p {
+  font-size: 15px;
+  color: var(--apple-muted);
+  margin-top: 7px;
+}
+#song-confirmation-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--apple-caption);
+  margin-top: 22px;
+}
+.song-confirmation-done {
+  width: 100%;
+  margin-top: 28px;
+  font-size: 17px;
+}
+.song-confirmation button:focus-visible {
+  outline: 2px solid var(--apple-focus);
+  outline-offset: 4px;
+}
+@keyframes receipt-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .song-confirmation {
+    animation: none;
+  }
+}
+
+/* Singer and guest share the same centered column and song-by-song rhythm. */
+.music-singer-centered {
+  max-width: 790px;
+}
+.music-singer-centered .music-console-summary {
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.music-singer-centered .music-summary-stats {
+  justify-content: space-between;
+}
+.music-singer-centered .music-request-grid {
+  grid-template-columns: 1fr;
+}
+.music-singer-centered .music-search {
+  margin-top: 24px;
+}
+.music-song-partition {
+  border-top: 1px solid var(--apple-hairline);
+  margin-top: 28px;
+  padding-top: 4px;
+}
+.music-song-partition .music-request-grid {
+  margin-top: 14px;
+}
+.music-partition-empty {
+  padding: 12px 0 8px;
+}
+.music-singer-centered .music-tabs {
+  gap: 4px;
+}
+@media (max-width: 540px) {
+  .music-singer-centered .music-tabs button {
+    padding: 9px 6px;
+  }
+}
+
+.vsph-footer {
+  width: 100%;
+  background: var(--apple-parchment);
+}
+.vsph-footer .hwf-root {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+.vsph-footer .hwf-brand strong {
+  font-weight: 600;
+}
+.vsph-footer .hwf-up {
+  min-height: 44px;
+  padding-inline: 8px;
+}
+
+/* Keep the receipt legible when blur is unavailable or transparency is reduced. */
+@supports not (
+  (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))
+) {
+  .song-confirmation {
+    background: var(--apple-parchment);
+    border-color: var(--apple-hairline);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .song-confirmation {
+    background: var(--apple-parchment);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .song-confirmation::backdrop {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Timing follows song selection: familiar choices first, custom entry on demand. */
+.music-time-picker {
+  border: 0;
+  padding: 0;
+  margin: 24px 0 4px;
+  min-width: 0;
+}
+.music-time-picker legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--apple-ink);
+}
+.music-time-picker legend span {
+  color: var(--apple-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+.music-time-picker > p:first-of-type {
+  font-size: 12px;
+  color: var(--apple-caption);
+  line-height: 1.5;
+  margin: 8px 0 14px;
+}
+.music-time-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.music-time-options button {
+  min-height: 44px;
+  border: 1px solid var(--apple-hairline);
+  border-radius: 12px;
+  color: var(--apple-body);
+  background: var(--apple-on-dark);
+  font-size: 13px;
+  cursor: pointer;
+}
+.music-time-options button[aria-pressed="true"] {
+  border-color: var(--apple-accent);
+  color: var(--apple-accent);
+  box-shadow: inset 0 0 0 1px var(--apple-accent);
+  background: #edf5ff;
+  font-weight: 600;
+}
+.music-custom-time-toggle {
+  min-height: 44px;
+  padding-left: 0;
+}
+.music-custom-time {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  background: var(--apple-on-dark);
+  border-radius: 12px;
+}
+.music-request-form .music-custom-time label {
+  margin: 0;
+  flex: 1;
+}
+.music-custom-time input {
+  padding: 10px 12px;
+  min-height: 44px;
+  border: 1px solid var(--apple-hairline);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--apple-ink);
+  color-scheme: light;
+}
+.music-custom-time input:focus-visible {
+  outline: 2px solid var(--apple-focus);
+  outline-offset: 3px;
+}
+.music-custom-time p {
+  width: 100%;
+  font-size: 12px;
+  color: #b42318;
+}
+.music-time-disclaimer {
+  font-size: 11px;
+  color: var(--apple-muted);
+}
+.music-preferred-time {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  color: var(--apple-accent);
+  font-size: 13px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #edf5ff;
+  border-radius: 10px;
+}
+.music-preferred-time span {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--apple-caption);
+}
+.song-confirmation-time {
+  display: inline-block;
+  padding: 10px 15px;
+  background: rgb(255 255 255 / 50%);
+  border-radius: 12px;
+  margin-top: 18px;
+  color: var(--apple-accent);
+  font-size: 14px;
+}
+.song-confirmation-time small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--apple-caption);
+}
+@media (max-width: 480px) {
+  .music-time-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.song-request-summary {
+  cursor: default;
+  margin: 0;
+  border-radius: 0;
+  padding: 18px;
+}
+.song-inline-status {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--apple-hairline);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--apple-caption);
+  background: var(--apple-parchment);
+  white-space: nowrap;
+}
+.song-inline-status > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.song-status-accepted,
+.song-status-in_progress {
+  color: var(--apple-accent);
+  background: #edf5ff;
+  border-color: #cce3ff;
+}
+.song-status-rejected {
+  color: #9d382c;
+  background: #fff4f2;
+  border-color: #f0d5cf;
+}
+.song-status-completed {
+  color: #326544;
+  background: #f0f6f1;
+  border-color: #d8e6db;
+}
+.music-vote-list .music-song-info .song-inline-status {
+  margin-top: 7px;
+  padding: 3px 8px;
+  font-size: 10px;
+}
+@media (max-width: 480px) {
+  .song-request-summary {
+    flex-wrap: wrap;
+  }
+}
+
+/* Pink glass reactions, with an explicit filled state and the existing vote count. */
+.music-vote.music-heart {
+  color: #c52a72;
+  background: rgb(255 240 248 / 65%);
+  border: 1px solid rgb(211 83 144 / 24%);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+  min-height: 44px;
+  min-width: 58px;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+.music-vote.music-heart[aria-pressed="true"] {
+  color: #ba1b63;
+  background: rgb(255 214 235 / 72%);
+  border-color: rgb(207 48 119 / 40%);
+}
+.music-heart[aria-pressed="true"] svg {
+  animation: heart-like 0.25s ease-out;
+}
+.music-vote.music-heart:focus-visible {
+  outline-color: #c52a72;
+}
+@keyframes heart-like {
+  0% {
+    transform: scale(0.8);
+  }
+  55% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@supports not (
+  (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))
+) {
+  .music-vote.music-heart {
+    background: #fff0f8;
+  }
+  .music-vote.music-heart[aria-pressed="true"] {
+    background: #ffd6eb;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .music-vote.music-heart {
+    background: #fff0f8;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .music-vote.music-heart[aria-pressed="true"] {
+    background: #ffd6eb;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .music-vote.music-heart {
+    transition: none;
+  }
+  .music-heart[aria-pressed="true"] svg {
+    animation: none;
+  }
+}
+
+/* With the rail removed, every singer section shares the viewport centerline. */
+.musician-centered-content {
+  width: 100%;
+  max-width: 790px;
+  margin-inline: auto;
+}
+.music-summary-events {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 9999px;
+  color: #fff;
+  background: rgb(255 255 255 / 7%);
+  font-size: 13px;
+}
+.music-summary-events span {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0 5px;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 15%);
+  font-size: 11px;
+}
+.music-summary-events:focus-visible,
+.musician-back-link:focus-visible {
+  outline: 2px solid var(--apple-on-dark-link);
+  outline-offset: 4px;
+}
+.musician-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin: 20px 24px 0;
+  color: var(--apple-accent);
+  font-size: 13px;
+}
+
+/* Performer workflow: inbox decisions → stable queue → history. */
+.singer-workflow-row {
+  padding: 20px;
+  background: var(--apple-on-dark);
+}
+.singer-track-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.singer-track-heading > div {
+  flex: 1;
+  min-width: 0;
+}
+.singer-track-heading h3 {
+  margin: 0 0 5px;
+  overflow-wrap: anywhere;
+}
+.singer-likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--apple-muted);
+}
+.singer-queue-number {
+  width: 26px;
+  flex-shrink: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--apple-muted);
+}
+.singer-quick-actions {
+  margin-top: 16px;
+}
+.singer-quick-actions > .music-primary {
+  flex: 2;
+}
+.singer-queue-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.singer-request-details {
+  margin-top: 14px;
+  border-top: 1px solid var(--apple-divider);
+  padding-top: 10px;
+}
+.singer-request-details summary {
+  color: var(--apple-caption);
+  font-size: 12px;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 12px 0;
+}
+.singer-history-status,
+.singer-workflow-hint {
+  color: var(--apple-caption);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+.singer-now-playing {
+  border-color: #cce3ff;
+}
+.music-singer-centered .music-song-partition {
+  margin-top: 18px;
+}
+
+/* Keep focused controls and the last footer links clear of the floating tools. */
+.musician-live-shell :focus-visible {
+  scroll-margin-block: 130px;
+}
+.musician-live-shell > .vsph-footer {
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+}
+.music-page button > svg,
+.music-console button > svg,
+.music-time-picker legend > svg {
+  flex-shrink: 0;
+}
+.music-page input,
+.music-page textarea,
+.music-console input {
+  caret-color: var(--apple-accent);
+}
+.music-page input::placeholder,
+.music-page textarea::placeholder,
+.music-console input::placeholder {
+  color: var(--apple-muted);
+  opacity: 1;
+}
+.music-page .music-secondary:hover,
+.music-console .music-secondary:hover,
+.music-filters button:hover:not([aria-pressed="true"]) {
+  background: var(--apple-parchment);
+}
+.music-secondary:disabled {
+  color: var(--apple-muted);
+  cursor: not-allowed;
+}
+.music-vote.music-heart {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+.music-vote.music-heart:hover:not(:disabled) {
+  border-color: #c52a72;
+}
+.music-singer-centered .music-setting-row > div,
+.music-centered .music-page-heading > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 540px) {
+  .music-centered .music-request-form,
+  .music-centered .music-audience,
+  .music-centered .music-history {
+    padding: 20px;
+  }
+  .music-centered .music-song-list li {
+    gap: 10px;
+    padding: 14px 12px;
+  }
+  .music-centered .music-hero-copy {
+    width: 76%;
+  }
+  .music-time-picker legend {
+    display: block;
+    line-height: 1.5;
+  }
+  .music-time-picker legend > svg {
+    display: inline-block;
+    vertical-align: -3px;
+    margin-right: 6px;
+  }
+  .singer-quick-actions > .music-secondary {
+    flex: 0 0 auto;
+  }
+  .singer-track-heading p {
+    font-size: 13px;
+  }
+  .music-console-dock {
+    gap: 2px;
+  }
+  .music-console-dock button {
+    padding-inline: 14px;
+  }
+}
+@media (max-height: 650px) {
+  .song-confirmation {
+    padding: 40px 24px 24px;
+  }
+  .song-confirmation-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+  }
+  .song-confirmation-track {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+  .song-confirmation-done {
+    margin-top: 20px;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .music-console-dock {
+    background: var(--apple-parchment);
+    backdrop-filter: none;
+  }
+}
+
+/* Three product destinations, one responsive glass navigation. */
+.product-nav-shell {
+  position: sticky;
+  top: 0;
+  z-index: 70;
+  padding: 12px 20px;
+  background: transparent;
+}
+.product-nav-glass {
+  max-width: 1160px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 64px;
+  padding: 8px 14px 8px 18px;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 22px;
+  outline: 1px solid rgb(0 0 0 / 6%);
+  background: rgb(245 245 247 / 78%);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  backdrop-filter: saturate(180%) blur(24px);
+}
+.product-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--apple-ink);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+}
+.product-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: var(--apple-accent);
+  color: white;
+}
+.product-wordmark small {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--apple-muted);
+}
+.product-nav-glass nav {
+  display: flex;
+  gap: 5px;
+}
+.product-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 15px;
+  color: var(--apple-caption);
+}
+.product-nav-link.is-active {
+  color: var(--apple-accent);
+  background: rgb(255 255 255 / 85%);
+}
+.product-nav-link:hover {
+  background: rgb(255 255 255 / 60%);
+}
+.product-nav-link:focus-visible,
+.product-wordmark:focus-visible {
+  outline: 2px solid var(--apple-focus);
+  outline-offset: 3px;
+}
+.product-page-shell {
+  min-height: calc(100dvh - 88px);
+  display: flex;
+  flex-direction: column;
+}
+.product-page-content {
+  flex: 1;
+}
+.product-footer {
+  max-width: 1160px;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 24px;
+  border-top: 1px solid var(--apple-hairline);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--apple-muted);
+}
+.staff-workspace {
+  max-width: 1160px;
+  width: 100%;
+  margin: auto;
+  padding: 32px 24px 56px;
+}
+.staff-workspace-heading {
+  margin-bottom: 24px;
+}
+.staff-workspace-heading h1 {
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  margin: 8px 0;
+}
+.staff-workspace-heading > p:last-child {
+  color: var(--apple-caption);
+  font-size: 14px;
+}
+.staff-workspace-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.staff-workspace-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  min-height: 44px;
+  border-radius: 999px;
+  background: var(--apple-parchment);
+  color: var(--apple-caption);
+  font-size: 13px;
+}
+.staff-workspace-tabs button[aria-pressed="true"] {
+  background: var(--apple-accent);
+  color: #fff;
+}
+.staff-workspace-tabs span {
+  font-size: 11px;
+  opacity: 0.8;
+}
+.staff-workspace-tabs button:focus-visible {
+  outline: 2px solid var(--apple-focus);
+  outline-offset: 3px;
+}
+.staff-workspace-panel,
+.singer-events-panel {
+  border-radius: 24px;
+  overflow: hidden;
+}
+.singer-events-panel {
+  margin-top: 24px;
+}
+.singer-events-back {
+  margin: 20px 24px 0;
+  color: white;
+  border-color: #a1a1a6;
+}
+.workspace-loading,
+.workspace-unavailable {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--apple-caption);
+}
+@media (max-width: 640px) {
+  .product-nav-shell {
+    padding: 10px;
+  }
+  .product-nav-glass {
+    padding: 7px;
+    gap: 6px;
+    border-radius: 18px;
+  }
+  .product-wordmark {
+    gap: 0;
+  }
+  .product-wordmark > span:last-child {
+    display: none;
+  }
+  .product-mark {
+    width: 30px;
+    height: 36px;
+    background: transparent;
+    color: var(--apple-accent);
+  }
+  .product-nav-glass nav {
+    flex: 1;
+    justify-content: space-between;
+    gap: 2px;
+  }
+  .product-nav-link {
+    padding: 10px 8px;
+    gap: 5px;
+    font-size: 11px;
+    border-radius: 12px;
+  }
+  .product-nav-link svg {
+    width: 15px;
+  }
+  .staff-workspace {
+    padding: 24px 14px 40px;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .product-nav-glass {
+    background: var(--apple-parchment);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+@supports not (
+  (backdrop-filter: blur(24px)) or (-webkit-backdrop-filter: blur(24px))
+) {
+  .product-nav-glass {
+    background: var(--apple-parchment);
+  }
+}
+
+.product-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 24px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--apple-accent);
+  color: white;
+  z-index: 80;
+}
+.product-skip-link:focus {
+  top: 12px;
+}
+#workspace-content {
+  scroll-margin-top: 100px;
+}
+@media (max-width: 380px) {
+  .product-nav-link {
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+}
+
+/* Daily music program and explicit demo previews share the existing Apple surfaces. */
+.program-controls {
+  margin: 0 0 24px;
+}
+.program-session-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--apple-caption);
+}
+.program-session-label > span {
+  margin-left: auto;
+  color: var(--apple-accent);
+  font-size: 11px;
+}
+.program-preview,
+.program-advance {
+  border: 1px solid var(--apple-hairline);
+  background: var(--apple-parchment);
+  border-radius: 16px;
+  margin-top: 12px;
+  padding: 0 16px;
+}
+.program-preview summary,
+.program-advance summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 13px 0;
+  font-size: 12px;
+  color: var(--apple-caption);
+}
+.program-preview summary svg,
+.program-advance summary svg {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 6px;
+}
+.program-preview summary span {
+  margin-left: 8px;
+  font-size: 10px;
+  color: var(--apple-muted);
+}
+.program-preview p,
+.program-advance p {
+  font-size: 12px;
+  color: var(--apple-caption);
+  padding-bottom: 12px;
+}
+.program-choice-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+}
+.program-choice-group button {
+  min-height: 44px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid var(--apple-hairline);
+  font-size: 12px;
+  color: var(--apple-caption);
+}
+.program-choice-group button[aria-pressed="true"] {
+  color: var(--apple-accent);
+  border-color: var(--apple-accent);
+  background: #edf5ff;
+}
+.program-booking-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 16px;
+  margin-top: 12px;
+  border: 1px solid #cce3ff;
+  background: #edf5ff;
+  border-radius: 16px;
+  font-size: 13px;
+}
+.program-booking-banner small {
+  display: block;
+  font-size: 11px;
+  color: var(--apple-caption);
+  margin-top: 4px;
+}
+.program-advance > .music-secondary {
+  margin-bottom: 16px;
+}
+.program-management {
+  padding: 28px;
+  background: var(--apple-parchment);
+  color: var(--apple-ink);
+}
+.program-management h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  margin: 8px 0;
+}
+.program-management h3 {
+  font-size: 19px;
+  font-weight: 600;
+}
+.program-management header > p:last-child,
+.program-helper {
+  font-size: 12px;
+  color: var(--apple-caption);
+  line-height: 1.5;
+  margin: 10px 0 16px;
+}
+.program-settings-card {
+  background: white;
+  border: 1px solid var(--apple-hairline);
+  border-radius: 18px;
+  padding: 24px;
+  margin-top: 20px;
+}
+.program-settings-card .music-section-heading {
+  margin-top: 0;
+}
+.program-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+.program-form-grid label,
+.program-override-label,
+.program-console-date label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.program-form-grid input,
+.program-form-grid select,
+.program-override-label select,
+.program-console-date input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid var(--apple-hairline);
+  background: var(--apple-parchment);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--apple-ink);
+  font-size: 14px;
+  font-weight: 400;
+  color-scheme: light;
+}
+.program-full-field {
+  grid-column: 1/-1;
+}
+.program-save-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.program-save-row p {
+  font-size: 12px;
+  width: 100%;
+}
+.program-controls button:focus-visible,
+.program-management :is(input, select, button):focus-visible,
+.program-console-selector :is(input, button):focus-visible {
+  outline: 2px solid var(--apple-focus);
+  outline-offset: 3px;
+}
+.program-console-selector {
+  background: var(--apple-parchment);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+.program-console-date {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.program-console-date label {
+  width: 165px;
+}
+.program-console-date > span {
+  padding-bottom: 12px;
+  font-size: 11px;
+}
+.staff-workspace-tabs {
+  flex-wrap: wrap;
+}
+.program-receipt-context {
+  font-size: 12px !important;
+}
+@media (max-width: 640px) {
+  .program-management {
+    padding: 14px;
+  }
+  .program-settings-card {
+    padding: 18px;
+  }
+  .program-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .program-session-label > span {
+    margin-left: 0;
+  }
+}
